@@ -22,11 +22,13 @@ Modifica la gramática corrigiendo los errores que veas, de manera que genere fr
               "if" <parenthesis> <block> ("else" "if" <block>)* ('else' <block>)? |
               "while" <parenthesis> <block> |
               'function' <word> '(' <word> (',' <word>)* ')' <block> |
-              <expr> ";"
+              <assign> ";"
               
 <declaration> ::= 'var' WORD ('=' <expr>)?
 
-<expr> ::= <term> (('==', '!=', '>', '>=', '<', '<=', '=') <term>)*
+<assign> ::= <expr> ('=' <expr>)*
+
+<expr> ::= <term> (('==', '!=', '>', '>=', '<', '<=') <term>)*
 
 <term> ::= <sum> (('+', '-') <sum>)*
 
