@@ -26,7 +26,9 @@ Modifica la gramática corrigiendo los errores que veas, de manera que genere fr
               
 <declaration> ::= 'var' WORD ('=' <expr>)?
 
-<assign> ::= <expr> ('=' <expr>)*
+<assign> ::= <left> ('=' <expr>)*
+
+<left> ::= WORD ( '.' WORD | '[' <term> ']' )*
 
 <expr> ::= <term> (('==', '!=', '>', '>=', '<', '<=') <term>)*
 
